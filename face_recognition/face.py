@@ -6,7 +6,7 @@ import face_recognition
 images = os.listdir('images')
 
 # load your image
-image_to_be_matched = face_recognition.load_image_file('my_image.jpg')
+image_to_be_matched = face_recognition.load_image_file('my_image.jpeg')
 
 # encoded the loaded image into a feature vector
 image_to_be_matched_encoded = face_recognition.face_encodings(
@@ -23,6 +23,6 @@ for image in images:
         [image_to_be_matched_encoded], current_image_encoded)
     # check if it was a match
     if result[0] == True:
-        print "Matched: " + image
+        print("Matched: " + image)
     else:
-        print "Not matched: " + image
+        print("Not matched: " + image)
